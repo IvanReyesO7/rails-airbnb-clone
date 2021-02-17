@@ -1,0 +1,29 @@
+<div class="container mt-3">
+  <h1>All our Flats</h1>
+  <div class="cards-grid">
+    <%@flats.each do |flat|%>
+    <div class="card">
+      <img class="flat-card-image" src="https://preview.redd.it/pl324nvi21wz.jpg?width=960&crop=smart&auto=webp&s=e529e9a4dc231c37c1038e10f9d6cd939c215d4b" alt="">
+      <div class="info">    
+        <h3><%=flat.name%></h3>
+        <p><b><%=flat.address%></b></p>
+        <p><%=flat.description%></p>
+        <div class="d-flex justify-content-between">
+          <div class="d-flex">
+            <i class="fas fa-user-friends"></i>
+            <p><em><%=flat.number_of_guests%></em></p>
+          </div>
+          <div class="d-flex">
+            <i class="fas fa-yen-sign"></i>
+            <p><em><%=flat.price_per_night%></em></p>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-around p-3">
+        <%= link_to "More info", flat_path(flat), class: "btn btn-outline-primary"%>
+        <%= link_to "Delete", flat_path(flat), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-outline-danger" %>
+      </div>
+    </div>
+    <%end%>
+  </div>
+</div>

@@ -7,9 +7,17 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
+    <div class="banner">
+      <div class="d-flex justify-content-between p-8">
+        <h2>Better than AirBnB</h2>
+        <p><%= link_to "Create", new_flat_path %></p>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>
